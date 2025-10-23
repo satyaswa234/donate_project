@@ -2,9 +2,9 @@ package donation.donate.repository;
 
 import donation.donate.model.DonateRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface DonateRequestRepository extends JpaRepository<DonateRequest, Long> {
-    List<DonateRequest> findByDonationId(Long donationId);
+    // no extra methods needed for now
 }
-

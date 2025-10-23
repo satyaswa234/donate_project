@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Donated Items - DonateHub</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+          font-family: 'Inter', sans-serif;
+          background: linear-gradient(to right, #e0f7e9, #f5f7fa);
+          overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+          background: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg') no-repeat center center/cover;
+          color: #fff;
+          padding: 100px 0 80px 0;
+          text-align: center;
+          position: relative;
+          border-bottom-left-radius: 50% 10%;
+          border-bottom-right-radius: 50% 10%;
+        }
+        .hero::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: rgba(25, 135, 84, 0.7);
+        }
+        .hero h1, .hero p {
+          position: relative;
+          z-index: 2;
+        }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 1.5rem; line-height: 1.8; max-width: 800px; margin: 0 auto; }
+        .hero-icons i {
+          font-size: 3rem;
+          margin: 0 15px;
+          color: rgba(255,255,255,0.8);
+          transition: 0.3s;
+        }
+        .hero-icons i:hover { color: #fff; transform: scale(1.3); }
+
+        /* Info / Paragraph Section */
+        .info-section {
+          position: relative;
+          background: #d9f2e6;
+          padding: 80px 30px;
+          border-radius: 25px;
+          margin: 60px auto;
+          text-align: center;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .info-section h2 {
+          color: #198754;
+          font-weight: 800;
+          font-size: 2.5rem;
+          margin-bottom: 25px;
+        }
+        .info-section p {
+          color: #333;
+          font-size: 1.3rem;
+          line-height: 1.8;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .info-section .icons {
+          margin-top: 30px;
+        }
+        .info-section .icons i {
+          font-size: 3rem;
+          color: #198754;
+          margin: 0 15px;
+          transition: 0.3s;
+        }
+        .info-section .icons i:hover { color: #145c32; transform: scale(1.2); }
+
+        /* Request Items Section */
+       /* Items Section */
+#itemsContainer {
+  padding: 30px 0; /* less padding than before */
+}
+
+.item-card {
+  background: linear-gradient(135deg, #e6f8f1, #ffffff);
+  border: 2px solid #198754;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.item-card img {
+  height: 150px; /* smaller image */
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 2px solid #198754;
+}
+
+.item-card h5 {
+  color: #198754;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.1rem; /* smaller heading */
+}
+
+.item-card p {
+  font-size: 0.95rem; /* smaller text */
+  margin-bottom: 5px;
+}
+
+.btn-request {
+  background-color: #198754;
+  color: white;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 6px 15px; /* smaller button */
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-request:hover {
+  background-color: #145c32;
+}
+
+
+        /* Gallery Section */
+        .gallery-section {
+          margin-top: 60px;
+          padding-bottom: 60px;
+        }
+        .gallery-section h2 {
+          color: #198754;
+          font-weight: 700;
+          margin-bottom: 40px;
+          text-align: center;
+        }
+        .gallery-section img {
+          border-radius: 20px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-section img:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        footer {
+          text-align:center;
+          padding:30px 15px;
+          background: linear-gradient(to right, #198754, #145c32);
+          color:white;
+          margin-top:50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Request Donated Items</h1>
+        <p>Help us support communities in need. Request items and make a difference today!</p>
+        <div class="hero-icons my-4">
+            <i class="bi bi-box-seam"></i>
+            <i class="bi bi-book"></i>
+            <i class="bi bi-t-shirt"></i>
+            <i class="bi bi-heart-fill"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section with Big Paragraph + Icons -->
+<section class="info-section container">
+    <h2>Why Request Donated Items?</h2>
+    <p>
+        By requesting donated items, you ensure that essential goods reach those who need them most.
+        Each request supports families, reduces waste, and strengthens communities. Your action,
+        no matter how small, brings comfort, education, and joy to someone's life.
+        Together, we create a world of care and compassion.
+    </p>
+    <div class="icons">
+        <i class="bi bi-box-seam"></i>
+        <i class="bi bi-book"></i>
+        <i class="bi bi-t-shirt"></i>
+        <i class="bi bi-heart-fill"></i>
+    </div>
+</section>
+
+<!-- Items Section -->
+<div class="container">
+    <div class="row" id="itemsContainer"></div>
+</div>
+
+<!-- Request Modal -->
+<div class="modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="requestModalLabel"><i class="bi bi-hand-index-thumb me-2"></i>Request Item</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="requestForm">
+                <div class="modal-body">
+                    <div class="mb-3"><label class="form-label">Donation Type</label><input type="text" id="donationType" class="form-control" readonly></div>
+                    <div class="mb-3"><label class="form-label">Donation ID</label><input type="text" id="donationId" class="form-control" readonly></div>
+                    <div class="mb-3"><label class="form-label">Your User ID</label><input type="number" id="receiverUserId" class="form-control" placeholder="Enter your user ID" required></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<section class="gallery-section container">
+    <h2>Community Impact Gallery</h2>
+    <div class="row g-3">
+        <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2017/02/01/11/09/volunteer-2036334_960_720.jpg" class="img-fluid"></div>
+        <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2017/07/28/12/49/volunteers-2547282_960_720.jpg" class="img-fluid"></div>
+        <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2015/03/26/09/41/volunteer-690213_960_720.jpg" class="img-fluid"></div>
+    </div>
+</section>
+
+<footer>
+    🌿 Care & Share | Together we make a difference 💚
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const API_BASE = "http://localhost:8080/api/donate";
+    const itemsContainer = document.getElementById("itemsContainer");
+    const requestModal = new bootstrap.Modal(document.getElementById("requestModal"));
+    let selectedDonationId = null;
+    let selectedDonationType = null;
+
+    async function loadItems() {
+      const endpoints = ["clothes","books","toys","other"];
+      let allItems = [];
+      for(const endpoint of endpoints){
+        const res = await fetch(`${API_BASE}/${endpoint}`);
+        if(res.ok){
+          const data = await res.json();
+          data.forEach(i=>i.donationType=endpoint);
+          allItems=allItems.concat(data);
+        }
+      }
+      displayItems(allItems);
+    }
+
+    function displayItems(items){
+      itemsContainer.innerHTML="";
+      if(items.length===0){
+        itemsContainer.innerHTML=`<div class="text-center text-muted mt-5">No items available.</div>`;
+        return;
+      }
+      items.forEach(item=>{
+        const img = getImage(item.donationType);
+        const card = `<div class="col-md-4 mb-4">
+          <div class="item-card" data-bs-toggle="popover" title="${item.itemName}" data-bs-content="Quantity: ${item.quantity}, Condition: ${item.itemCondition}">
+            <img src="${img}" class="item-img" alt="${item.itemName}">
+            <div class="card-body text-center">
+              <h5 class="fw-bold text-success">${capitalize(item.donationType)}</h5>
+              <p><strong>Item:</strong> ${item.itemName}</p>
+              <p><strong>Quantity:</strong> ${item.quantity}</p>
+              <p><strong>Condition:</strong> ${item.itemCondition}</p>
+              <button class="btn btn-request mt-2" onclick="openRequestForm('${item.id}','${item.donationType}')">Request Now</button>
+            </div>
+          </div>
+        </div>`;
+        itemsContainer.innerHTML+=card;
+      });
+
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+      [...popoverTriggerList].map(el => new bootstrap.Popover(el));
+    }
+
+    function openRequestForm(id,type){
+      selectedDonationId=id;
+      selectedDonationType=type;
+      document.getElementById("donationId").value=id;
+      document.getElementById("donationType").value=capitalize(type);
+      requestModal.show();
+    }
+
+    document.getElementById("requestForm").addEventListener("submit", async e=>{
+      e.preventDefault();
+      const requestData = {
+        donationType:selectedDonationType,
+        donationId:selectedDonationId,
+        receiverUserId: document.getElementById("receiverUserId").value
+      };
+      const res = await fetch(`${API_BASE}/requests/add`,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(requestData)
+      });
+      if(res.ok){ alert("✅ Request added successfully!"); requestModal.hide(); }
+      else{ alert("❌ Failed to add request."); }
+    });
+
+    function getImage(type){
+      switch(type){
+        case "clothes": return "https://cdn-icons-png.flaticon.com/512/892/892458.png";
+        case "books": return "https://cdn-icons-png.flaticon.com/512/2232/2232688.png";
+        case "toys": return "https://cdn-icons-png.flaticon.com/512/3004/3004218.png";
+        case "other": return "https://cdn-icons-png.flaticon.com/512/744/744502.png";
+        default: return "https://cdn-icons-png.flaticon.com/512/1946/1946488.png";
+      }
+    }
+
+    function capitalize(str){ return str.charAt(0).toUpperCase()+str.slice(1); }
+    loadItems();
+</script>
+</body>
+</html>

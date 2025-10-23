@@ -2,11 +2,11 @@ package donation.donate.service;
 
 import donation.donate.dto.DonateItemDTO;
 import donation.donate.dto.DonateRequestDTO;
-import donation.donate.model.DonateItem;
-import donation.donate.model.DonateRequest;
-import donation.donate.repository.DonateItemRepository;
-import donation.donate.repository.DonateRequestRepository;
+import donation.donate.model.*;
+import donation.donate.repository.*;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -15,37 +15,109 @@ public class DonateService {
     private final DonateItemRepository donateItemRepository;
     private final DonateRequestRepository donateRequestRepository;
 
-    public DonateService(DonateItemRepository donateItemRepository, DonateRequestRepository donateRequestRepository) {
+    private final DonateClothesRepository clothesRepo;
+    private final DonateBooksRepository booksRepo;
+    private final DonateToysRepository toysRepo;
+    private final DonateOtherItemsRepository otherRepo;
+
+
+
+    public DonateService(
+            DonateItemRepository donateItemRepository,
+            DonateRequestRepository donateRequestRepository,
+            DonateClothesRepository clothesRepo,
+            DonateBooksRepository booksRepo,
+            DonateToysRepository toysRepo,
+            DonateOtherItemsRepository otherRepo
+    ) {
         this.donateItemRepository = donateItemRepository;
         this.donateRequestRepository = donateRequestRepository;
+        this.clothesRepo = clothesRepo;
+        this.booksRepo = booksRepo;
+        this.toysRepo = toysRepo;
+        this.otherRepo = otherRepo;
     }
 
-    // Donate Item
+    // =========================
+    // Generic Donations
+    // =========================
     public DonateItem createDonation(DonateItemDTO dto) {
         DonateItem item = new DonateItem(
                 dto.getItemName(),
                 dto.getQuantity(),
-                dto.getItemType(),
                 dto.getItemCondition(),
-                dto.getPickupAddress()
+                dto.getPickupAddress(),
+                dto.getUserId()
         );
         return donateItemRepository.save(item);
     }
-
-    // Get all donations
     public List<DonateItem> getAllDonations() {
-        return donateItemRepository.findAll();
+        return donateItemRepository.findAll(); // ✅ This must exist
     }
 
-    // Create donation request
     public DonateRequest createDonateRequest(DonateRequestDTO dto) {
-        DonateRequest request = new DonateRequest(dto.getDonationId(), "PENDING");
+        DonateRequest request = new DonateRequest(
+                dto.getDonationType(),
+                dto.getDonationId(),
+                dto.getReceiverUserId(),
+                "PENDING",
+                LocalDateTime.now()
+        );
+        return donateRequestRepository.save(request);
+
+    }
+
+
+    // =========================
+    // Donation Requests (NEW)
+    // =========================
+    public DonateRequest createDonateRequest(DonateRequest request) {
+        request.setStatus("PENDING");
+        request.setRequestedDate(LocalDateTime.now());
         return donateRequestRepository.save(request);
     }
 
-    // Get requests for a donation
-    public List<DonateRequest> getRequestsForDonation(Long donationId) {
-        return donateRequestRepository.findByDonationId(donationId);
+    public List<DonateRequest> getAllRequests() {
+        return donateRequestRepository.findAll();
+    }
+
+    // =========================
+    // Category-based Donations
+    // =========================
+
+    // Clothes
+    public DonateClothes donateClothes(DonateClothes item) {
+        return clothesRepo.save(item);
+    }
+
+    public List<DonateClothes> getAllClothes() {
+        return clothesRepo.findAll();
+    }
+
+    // Books
+    public DonateBooks donateBooks(DonateBooks item) {
+        return booksRepo.save(item);
+    }
+
+    public List<DonateBooks> getAllBooks() {
+        return booksRepo.findAll();
+    }
+
+    // Toys
+    public DonateToys donateToys(DonateToys item) {
+        return toysRepo.save(item);
+    }
+
+    public List<DonateToys> getAllToys() {
+        return toysRepo.findAll();
+    }
+
+    // Other Items
+    public DonateOtherItems donateOtherItems(DonateOtherItems item) {
+        return otherRepo.save(item);
+    }
+
+    public List<DonateOtherItems> getAllOtherItems() {
+        return otherRepo.findAll();
     }
 }
-
