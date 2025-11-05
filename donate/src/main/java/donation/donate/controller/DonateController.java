@@ -2,9 +2,8 @@ package donation.donate.controller;
 
 import donation.donate.dto.DonateItemDTO;
 import donation.donate.dto.DonateRequestDTO;
-import donation.donate.model.*;
+import donation.donate.entity.*;
 import donation.donate.service.DonateService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

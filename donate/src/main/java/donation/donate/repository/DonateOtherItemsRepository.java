@@ -1,6 +1,6 @@
 package donation.donate.repository;
 
-import donation.donate.model.DonateOtherItems;
+import donation.donate.entity.DonateOtherItems;
 import org.springframework.data.jpa.repository.JpaRepository;
-public interface DonateOtherItemsRepository extends JpaRepository<DonateOtherItems, Long> {}
 
+public interface DonateOtherItemsRepository extends JpaRepository<DonateOtherItems, Long> {}

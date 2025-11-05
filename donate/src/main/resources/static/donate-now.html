@@ -11,6 +11,7 @@
         body {
           font-family: 'Inter', sans-serif;
           background-color: #f5f7fa;
+          background:url('https://media.istockphoto.com/id/1465760198/vector/abstract-blue-background-with-space-for-text.jpg?s=612x612&w=0&k=20&c=fXbSkVB3MdZjkaYUIX-Q7liCtmG5cr6kqAAzX-cM3L8=')center/cover no-repeat;
         }
 
         /* Navbar */
@@ -154,8 +155,16 @@
         /* Info Section */
         .info-section {
           padding: 80px 0;
-          background-color: #ffffff;
+          background: rgb(176,224,230);
+background: linear-gradient(159deg, rgba(176,224,230,1) 0%, rgba(70,130,180,1) 100%);
         }
+        .info-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
         .info-section img {
           border-radius: 15px;
           box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -169,6 +178,19 @@
           color: #555;
           line-height: 1.8;
         }
+ .info-section img {
+    max-width: 80%;       /* Reduce the width */
+    height: auto;
+    display: block;
+    margin: 0 auto;       /* Center the image */
+}
+
+.volunteer-img {
+    max-width: 80% !important;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
         /* Helps Section */
         .helps-section {
@@ -197,8 +219,10 @@
 
         /* Impact Banner */
         .impact-banner {
-          background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                      url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+        margin-bottom: 30px;
+          background: rgb(176,224,230);
+background: linear-gradient(159deg, rgba(176,224,230,1) 0%, rgba(70,130,180,1) 100%);
+                      url('https://demo.divi-pixel.com/charity/wp-content/uploads/sites/46/2024/08/charity-blog-fi-07.jpg') center/cover no-repeat;
           padding: 80px 20px;
           text-align: center;
           color: #fff;
@@ -238,13 +262,13 @@
           transform: scale(1.05);
         }
 
-        footer {
-          background: #0d6efd;
-          color: #fff;
-          text-align: center;
-          padding: 15px 0;
-          margin-top: 50px;
-        }
+       /* Footer */
+        .footer-section { background: linear-gradient(135deg, #0d6efd, #38BA86); color: #fff; border-radius: 2rem 2rem 0 0; padding-top: 40px; padding-bottom: 30px; }
+        .footer-section h5 { font-weight: 700; font-size: 1.25rem; margin-bottom: 12px; }
+        .footer-section p, .footer-section li a { color: #e0f7f1; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        .footer-section li a:hover { color: #fff; text-decoration: underline; }
+        .btn-social { background: rgba(255,255,255,0.15); border: none; color: #fff; width: 45px; height: 45px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.25rem; border-radius: 50%; transition: all 0.3s ease; }
+        .btn-social:hover { background: #fff; color: #0d6efd; transform: scale(1.2); box-shadow: 0 6px 15px rgba(0,0,0,0.25); }
     </style>
 </head>
 <body>
@@ -296,7 +320,7 @@
                 <div class="donate-now-box text-center p-4">
                     <i class="bi bi-bag-heart-fill donate-icon"></i>
                     <h4 class="donate-title">Clothes</h4>
-                    <a href="donate-clothes.html" class="donate-btn">Donate Now</a>
+                    <a href="donate-items.html" class="donate-btn">Donate Now</a>
                 </div>
             </div>
 
@@ -322,7 +346,7 @@
                 <div class="donate-now-box text-center p-4">
                     <i class="bi bi-book-half donate-icon"></i>
                     <h4 class="donate-title">Books</h4>
-                    <button class="donate-btn">Donate Now</button>
+                    <a href="donate-items.html" class="donate-btn">Donate Now</a>
                 </div>
             </div>
 
@@ -348,7 +372,7 @@
                 <div class="donate-now-box text-center p-4">
                     <i class="bi bi-gift-fill donate-icon"></i>
                     <h4 class="donate-title">children Toys</h4>
-                    <button class="donate-btn">Donate Now</button>
+                    <a href="donate-items.html" class="donate-btn">Donate Now</a>
                 </div>
             </div>
 
@@ -374,7 +398,7 @@
                 <div class="donate-now-box text-center p-4">
                     <i class="bi bi-laptop donate-icon"></i>
                     <h4 class="donate-title">Other Items</h4>
-                    <button class="donate-btn">Donate Now</button>
+                    <a href="donate-items.html" class="donate-btn">Donate Now</a>
                 </div>
             </div>
 
@@ -399,7 +423,7 @@
     <div class="container">
         <div class="row align-items-center g-4">
             <div class="col-lg-6">
-                <img src="https://images.unsplash.com/photo-1603575448362-6f5464b52a4d?auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Donation Info">
+                <img src="https://thumbs.dreamstime.com/b/senior-volunteer-man-holding-your-donation-matters-smiling-happy-pointing-hand-finger-260199592.jpg" class="img-fluid" alt="Donation Info">
             </div>
             <div class="col-lg-6">
                 <h2>Why Your Donation Matters</h2>
@@ -408,6 +432,35 @@
         </div>
     </div>
 </section>
+<!-- Need Volunteers Section -->
+<section class="info-section">
+    <div class="container">
+        <div class="row align-items-center g-4 flex-row-reverse">
+
+            <!-- Image -->
+            <div class="col-lg-6 text-center">
+                <img src="https://img.freepik.com/premium-photo/woman-holding-sheet-paper-with-text-we-need-volunteers-color-background-closeup_392895-152332.jpg?semt=ais_hybrid&w=740&q=80" max
+                     class="img-fluid volunteer-img"
+                     alt="Need Volunteers">
+            </div>
+
+            <!-- Text -->
+            <div class="col-lg-6">
+                <h2>We Need Volunteers</h2>
+                <p>
+                    Our mission is powered by passionate individuals like you.
+                    By volunteering, you help us collect, sort, and distribute donated items
+                    to <strong>schools, orphanages, NGOs, and families in need</strong>.
+                    Your time and effort create real impact —
+                    <strong>every helping hand brings hope and happiness to someone’s life.</strong>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
 <!-- How Your Donation Helps -->
 <section class="helps-section">
@@ -440,16 +493,82 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
-    <h3>Start Donating Today</h3>
-    <p>Your old items can become someone's hope.</p>
-    <button class="cta-btn">Donate Now</button>
-</section>
+<footer class="footer-section py-4" id="footer">
+    <div class="container-fluid px-5">
+        <div class="row g-4 text-white justify-content-between">
 
-<footer>
-    <p>© 2025 DonateHub. All Rights Reserved.</p>
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>Care & Share helps recycle, resell, and donate books & clothes. Building a sustainable community through responsible actions.</p>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Contact</h5>
+                <p>Email: info@careandshare.com</p>
+                <p>Phone: +91 9876543210</p>
+                <div class="d-flex gap-2 mt-3">
+                    <a href="#" class="btn btn-social"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="btn btn-social"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="btn btn-social"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-3 border-light opacity-50">
+        <p class="text-center mb-0">&copy; 2025 Care & Share | All Rights Reserved</p>
+    </div>
 </footer>
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    <script>
+    async function uploadImage(file) {
+        const formData = new FormData();
+        formData.append("image", file);
+
+        const res = await fetch("http://localhost:8080/api/books/upload", {
+            method: "POST",
+            body: formData
+        });
+
+        return await res.text();
+    }
+
+    async function saveDonation() {
+        const fileInput = document.getElementById("fileInput").files[0];
+        const imageUrl = await uploadImage(fileInput);
+
+        const data = {
+            itemName: "Books",
+            quantity: 10,
+            itemCondition: "Good",
+            pickupAddress: "Hyderabad",
+            userId: 10,
+            imageUrl: imageUrl
+        };
+
+        fetch("http://localhost:8080/api/books", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => alert("Books Donated Successfully!"));
+    }
+
+
+</script>
 </body>
 </html>

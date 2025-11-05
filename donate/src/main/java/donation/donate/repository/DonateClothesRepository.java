@@ -1,7 +1,9 @@
 package donation.donate.repository;
 
-import donation.donate.model.DonateClothes;
+import donation.donate.entity.DonateClothes;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface DonateClothesRepository extends JpaRepository<DonateClothes, Long> {}
-
+@Repository
+public interface DonateClothesRepository extends JpaRepository<DonateClothes, Long> {
+}

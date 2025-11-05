@@ -1,7 +1,7 @@
 package donation.donate.controller;
 
 import donation.donate.dto.DonateItemDTO;
-import donation.donate.model.DonateClothes;
+import donation.donate.entity.DonateClothes;
 import donation.donate.service.DonateClothesService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,18 +19,16 @@ public class DonateClothesController {
         this.donateClothesService = donateClothesService;
     }
 
-    // POST: Add new clothes donation
     @PostMapping
     public ResponseEntity<DonateClothes> addDonation(@RequestBody DonateItemDTO dto) {
         try {
-            DonateClothes saved = donateClothesService.addDonation(dto);
-            return ResponseEntity.ok(saved);
+            return ResponseEntity.ok(donateClothesService.addDonation(dto));
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(500).build();
         }
     }
 
-    // GET: All clothes donations
     @GetMapping("/all")
     public ResponseEntity<List<DonateClothes>> getAllDonations() {
         return ResponseEntity.ok(donateClothesService.getAllDonations());

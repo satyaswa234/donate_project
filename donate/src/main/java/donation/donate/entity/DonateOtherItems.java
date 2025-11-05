@@ -1,18 +1,29 @@
-package donation.donate.dto;
+package donation.donate.entity;
 
-public class DonateItemDTO {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "donate_others")
+public class DonateOtherItems {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String itemName;
     private int quantity;
     private String itemCondition;
     private String pickupAddress;
     private Long userId;
+
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String imageUrl;
 
-    public DonateItemDTO() {}
+    public DonateOtherItems() {}
 
-    public DonateItemDTO(String itemName, int quantity, String itemCondition,
-                         String pickupAddress, Long userId, String imageUrl) {
+    public DonateOtherItems(String itemName, int quantity, String itemCondition,
+                            String pickupAddress, Long userId, String imageUrl) {
         this.itemName = itemName;
         this.quantity = quantity;
         this.itemCondition = itemCondition;
@@ -20,6 +31,8 @@ public class DonateItemDTO {
         this.userId = userId;
         this.imageUrl = imageUrl;
     }
+
+    public Long getId() { return id; }
 
     public String getItemName() { return itemName; }
     public void setItemName(String itemName) { this.itemName = itemName; }

@@ -2,7 +2,7 @@ package donation.donate.service;
 
 import donation.donate.dto.DonateItemDTO;
 import donation.donate.dto.DonateRequestDTO;
-import donation.donate.model.*;
+import donation.donate.entity.*;
 import donation.donate.repository.*;
 import org.springframework.stereotype.Service;
 

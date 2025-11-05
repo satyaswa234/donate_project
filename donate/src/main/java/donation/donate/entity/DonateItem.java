@@ -1,4 +1,4 @@
-package donation.donate.model;
+package donation.donate.entity;
 
 import jakarta.persistence.*;
 

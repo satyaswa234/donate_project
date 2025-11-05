@@ -1,6 +1,6 @@
 package donation.donate.repository;
 
-import donation.donate.model.DonateRequest;
+import donation.donate.entity.DonateRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

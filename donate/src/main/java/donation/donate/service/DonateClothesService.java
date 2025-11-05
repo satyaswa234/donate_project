@@ -1,7 +1,7 @@
 package donation.donate.service;
 
 import donation.donate.dto.DonateItemDTO;
-import donation.donate.model.DonateClothes;
+import donation.donate.entity.DonateClothes;
 import donation.donate.repository.DonateClothesRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,13 +17,16 @@ public class DonateClothesService {
     }
 
     public DonateClothes addDonation(DonateItemDTO dto) {
+
         DonateClothes clothes = new DonateClothes(
                 dto.getItemName(),
                 dto.getQuantity(),
                 dto.getItemCondition(),
                 dto.getPickupAddress(),
-                dto.getUserId()
+                dto.getUserId(),
+                dto.getImageUrl()   // ✅ Save image
         );
+
         return repository.save(clothes);
     }
 
@@ -31,4 +34,3 @@ public class DonateClothesService {
         return repository.findAll();
     }
 }
-
